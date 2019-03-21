@@ -31,7 +31,7 @@ xr = ifft(xr);
 xr = real(xr);
 
 % numel = number of elements
-% generate linearly spaced vector witn n points
+% generate linearly spaced vector witn n points, x axis
 normfreq = linspace(-1/2, 1/2, numel(F));
 
 % figure window (title)
