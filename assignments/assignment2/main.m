@@ -1,10 +1,9 @@
 % filtering audio tracks
 
 % assignment: building an audio equalizer
-% fasce arbitrarie, bisogna capire cos'è alto, cos'è medio, cos'è basso
-% deve dimezzare le alte frequenze, lasciare inalterate le medie e
-% raddoppiare le basse
-% spettro prima e dopo il filtro
+% arbitrary intervals
+% double low frequencies, halve high frequencies
+% display spectrum, filter and modified frequencies
 
 close all;
 
@@ -14,20 +13,20 @@ close all;
 % sound(y, 48000);
 
 y = y(:, 1);
-% due canali: cuffia destra e sinistra
+% two channels (two earphones)
 
 F = fft(y);
 F = fftshift(F);
 normfreq = linspace(-1/2, 1/2, numel(F));
 
 center = round(numel(F) / 2);
-low = 1000000;
-high = 9000000;
+low = 1500000;
+high = 8500000;
 
 filter = ones(1, numel(F));
 
-width = 5000;
-% 125000 non si sente nulla
+width = 8000;
+% lower than 12500
 
 filter((center - width) : (center + width)) = 2;  % arbitrary value
 
@@ -44,7 +43,7 @@ xf = real(xf);
 % figure(2), plot(abs(xf)/numel(xf))
 % figure(2), plot(xf)
 
-% segnale originale, filtro, segnale trasformato
+% original signal, filter, filtered signal
 figure(1);
 subplot(3, 1, 1);
 plot(normfreq, abs(F)/numel(F)), title("Original signal");

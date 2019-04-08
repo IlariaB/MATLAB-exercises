@@ -42,7 +42,7 @@ X = ifft2(F);
 X = real(X);
 % figure(6), imshow(X);
 
-im = imread('lena.bmp');
+im = imread('files/lena.bmp');
 im = im2double(im);
 im = rgb2gray(im);  % greyscale
 
