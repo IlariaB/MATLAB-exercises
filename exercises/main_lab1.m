@@ -38,14 +38,14 @@ normfreq = linspace(-1/2, 1/2, numel(F));
 figure(1);
 % axes in tiled position
 subplot(2, 2, 1);
-stem(n,x), title('Impulse');
+stem(n, x), title('Impulse');
 % plot(n, x);
 ylim([-0.1 1.1]);
 subplot(2, 2, 2);
 stem(n1,x1), title('Step');
 ylim([-0.1 1.1]);
 subplot(2, 2, 3);
-stem(n2,x2), title('Window');
+stem(n2, x2), title('Window');
 ylim([-0.1 1.1]);
 subplot(2, 2, 4);
 stem(n3, x3), title('Ramp');
